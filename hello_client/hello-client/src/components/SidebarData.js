@@ -1,4 +1,4 @@
-import React from 'react';
+
 
 
 export const SidebarData = [
@@ -24,7 +24,7 @@ export const SidebarData = [
     },
     {
         title: 'Notifications',
-        path:'/notofications',
+        path:'/notifications',
         cName: 'nav-text'
     },
     {

@@ -11,7 +11,7 @@ function Navbar() {
   const showSidebar = () => setSidebar(!sidebar);
 
   return (
-    <>
+    <div className="nav-main">
       
         <div className='navbar'>
           <Link to='#' className='menu-bars'>
@@ -37,7 +37,7 @@ function Navbar() {
           </ul>
         </nav>
       
-    </>
+    </div>
   );
 }
 

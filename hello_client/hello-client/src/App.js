@@ -7,6 +7,7 @@ import Clients from './pages/Clients';
 import MoneyChart from './pages/MoneyChart';
 import Notifications from './pages/Notifications';
 import Payments from './pages/Payments';
+import ManageService from './pages/ManageService';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path='/moneychart' component={MoneyChart} />
           <Route path='/notifications' component={Notifications} />
           <Route path='/payments' component={Payments} />
+          <Route path='/manageservice' component={ManageService}/>
         </Switch>
       </Router>
       

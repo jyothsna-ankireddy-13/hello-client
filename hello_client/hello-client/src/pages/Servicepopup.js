@@ -8,17 +8,20 @@ import MuiDialogActions from '@material-ui/core/DialogActions';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 import Typography from '@material-ui/core/Typography';
+import * as FaIcons from 'react-icons/fa';
+import './Card.css';
 
 const styles = (theme: Theme) =>
   createStyles({
     root: {
+      width:250,
       margin: 0,
-      padding: theme.spacing(2),
+      padding: theme.spacing(4),
     },
     closeButton: {
       position: 'absolute',
-      right: theme.spacing(1),
-      top: theme.spacing(1),
+      right: theme.spacing(0.1),
+      top: theme.spacing(0.1),
       color: theme.palette.grey[500],
     },
   });
@@ -45,7 +48,7 @@ const DialogTitle = withStyles(styles)((props: DialogTitleProps) => {
 
 const DialogContent = withStyles((theme: Theme) => ({
   root: {
-    padding: theme.spacing(2),
+    padding: theme.spacing(5),
   },
 }))(MuiDialogContent);
 
@@ -68,8 +71,8 @@ export default function CustomizedDialogs({children,title}) {
 
   return (
     <div>
-      <Button variant="outlined" color="primary" onClick={handleClickOpen}>
-        Create
+      <Button className="plus-btn" onClick={handleClickOpen}>
+        <FaIcons.FaPlus/>
       </Button>
       <Dialog aria-labelledby="customized-dialog-title" open={open}>
         <DialogTitle id="customized-dialog-title" onClose={handleClose}>
