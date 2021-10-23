@@ -36,7 +36,6 @@ const Services = () => {
                 </div>
             </div> 
         <div>
-        
             
             <div className="cards">
                 <Card className="card-container" >

@@ -1,9 +1,10 @@
 import React from 'react'
-
+import * as FaIcons from 'react-icons/fa';
 import {Card, CardContent,Typography, CardActions, Button} from '@material-ui/core';
 import './Card.css';
 import CustomizedDialogs from './Servicepopup';
 import NewService from './NewService';
+import {Link} from 'react-router-dom';
 const ManageService = () => {
     return (
         <div className="manage-service"> 
@@ -39,9 +40,13 @@ const ManageService = () => {
                     <Button className="remind-all">Remind All</Button>
                 </div>
             </div> 
+
+        <div>
+            <Link to="/addexpense" className="remind-all">
+                <FaIcons.FaPlus/> Add Expense
+            </Link>
+        </div>
         <div className="cards-wrap">
-        
-            
             <div className="cards">
                 <Card className="card-container" >
                     <CardContent className="card-content">

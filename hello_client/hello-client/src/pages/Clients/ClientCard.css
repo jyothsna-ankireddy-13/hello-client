@@ -1,0 +1,144 @@
+.card-container{
+    width:400px;
+    height: 200px;
+    overflow: hidden;
+    box-shadow: 0px 0px 15px -5px;
+    transition: 0.5s;
+    animation: ease-in-out;
+    padding-left: 5rem;
+    margin-left: 3rem;
+}
+
+.card-container:hover{
+    transform: scale(1.1);
+    box-shadow: 0px 0px 15px 0px;
+}
+.card-display{
+    display: flex;
+    flex-direction: row;
+}
+#service-card2{
+    width:400px;
+    height: auto;
+    overflow: hidden;
+    /* box-shadow: 0px 0px 15px -5px; */
+    transition: 0.5s;
+    animation: ease-in-out;
+    padding-left: 1rem;
+    margin-left: 3rem;
+    background-color: #ffffff;
+    justify-content: space-between !important;
+}
+
+#service-card2:hover{
+    transform: scale(1.1);
+    box-shadow: 0px 0px 15px 0px;
+}
+
+#service-card2 span{
+    margin-left: 0;
+}
+#service-card2 .MuiCardActions-root{
+    justify-content: space-between;
+}
+
+.MuiButton-root svg{
+    height: 40px;
+    width: 183px;
+
+}
+ .MuiButton-root:hover {
+    text-decoration: none;
+    background-color: transparent!important; 
+}
+
+.cardActions{
+    display: flex;
+    font-size: 20px;
+    text-decoration: none;
+}
+.cards{
+    display: flex;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+.remind-all{
+    background-color: #ffffff !important;
+    color: rgb(97, 223, 97) !important;
+    text-decoration: none;
+    font-size: 2rem;
+}
+.remind-btn{
+    background-color: rgb(97, 223, 97) !important;
+    color: #ffffff !important;
+}
+.clientname-heading{
+    padding-bottom: 1rem;
+    color: rgb(97, 223, 97);
+}
+.client-main{  
+    padding: 1rem 1rem;
+    width: 100%;
+    height: auto;
+    color:#ffffff;
+    margin-bottom: 3rem;
+    background-color: rgb(97, 223, 97);
+}
+.client-details{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    
+}
+.client-due{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+hr{
+    margin-bottom: 2rem;
+}
+.client-content{
+    margin-bottom: 10rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+
+.service-text2{
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    height: auto;
+    padding: 1rem 2rem;
+    color:#ffffff;
+    background-color: rgb(97, 223, 97);
+}
+.clients{
+    
+    flex:0 0 80%;
+    max-width: 80%;
+    padding: 0 3rem;
+}
+.payments{
+    
+    flex:0 0 80%;
+    max-width: 80%;
+    padding: 0 3rem;
+}
+.payment-due{
+    display: flex;
+}
+.paymentname-heading{
+    padding-bottom: 1rem;
+    color: rgb(97, 223, 97);
+}
+.payment-main{  
+    padding: 1rem 1rem;
+    width: 10   0%;
+    height: auto;
+    color:#ffffff;
+    margin-bottom: 3rem;
+    background-color: rgb(97, 223, 97);
+}

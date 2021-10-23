@@ -2,13 +2,15 @@ import { BrowserRouter as Router, Switch ,Route} from 'react-router-dom';
 import './App.css';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
-import Services from './pages/Services';
-import Clients from './pages/Clients';
+import Services from './pages/Services/Services';
+import Clients from './pages/Clients/Clients';
 import MoneyChart from './pages/MoneyChart';
 import Notifications from './pages/Notifications';
 import Payments from './pages/Payments';
-import ManageService from './pages/ManageService';
-
+import ManageService from './pages/Services/ManageService';
+import AddExpense from './pages/Services/AddExpense';
+import ManageClients from './pages/Clients/ManageClients';
+;
 function App() {
   return (
     <>
@@ -22,6 +24,8 @@ function App() {
           <Route path='/notifications' component={Notifications} />
           <Route path='/payments' component={Payments} />
           <Route path='/manageservice' component={ManageService}/>
+          <Route path='/addexpense' component={AddExpense}/>
+          <Route path='/manageclients' component={ManageClients}/>
         </Switch>
       </Router>
       
