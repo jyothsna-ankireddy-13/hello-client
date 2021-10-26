@@ -1,8 +1,9 @@
 import React from 'react';
-import {Card, CardContent,Typography, CardActions, Button} from '@material-ui/core';
+import {Card, CardContent,Typography, CardActions, Button,InputBase} from '@material-ui/core';
 import './ClientCard.css';
 import {Link} from 'react-router-dom';
 import * as FaIcons from 'react-icons/fa';
+import SearchIcon from '@material-ui/icons/Search';
 const Clients = () => {
     return (
         <div className="clients">
@@ -22,10 +23,11 @@ const Clients = () => {
                     </div>
                 </div><hr/>
             </div>
-            
+            <div className="search-input">
+                <InputBase placeholder="Search" startAdornment={<SearchIcon/>}/>
+            </div>  
         <div>
-            
-            <div className="cards">
+             <div className="cards">
                 <Card className="card-container" >
                     <CardContent className="card-content">
                         <Typography gutterBottom  variant="h5">

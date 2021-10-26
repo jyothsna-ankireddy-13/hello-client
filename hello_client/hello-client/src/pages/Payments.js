@@ -1,8 +1,9 @@
 import React from 'react';
-import {Typography} from '@material-ui/core';
+import {Typography,InputBase} from '@material-ui/core';
 import {Link} from 'react-router-dom';
 import * as FaIcons from 'react-icons/fa';
 import './Clients/ClientCard.css';
+import SearchIcon from '@material-ui/icons/Search';
 const Payments = () => {
     return (
         < div className="payments">
@@ -22,6 +23,9 @@ const Payments = () => {
                         </div>
                     </div>
                 </div>
+                <div className="search-input">
+                <InputBase placeholder="Search" startAdornment={<SearchIcon/>}/>
+            </div>
                 <div>
                     <Link to="/addexpense" className="remind-all">
                         <FaIcons.FaPlus/> Add Expense

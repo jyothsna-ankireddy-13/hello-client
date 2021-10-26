@@ -1,10 +1,11 @@
 import React,{useState} from 'react';
 import * as FaIcons from 'react-icons/fa';
-import {Card, CardContent,Typography, CardActions, Button} from '@material-ui/core';
+import {Card, CardContent,Typography, CardActions, Button,InputBase} from '@material-ui/core';
 import './Card.css';
 import CustomizedDialogs from './Servicepopup';
 import NewService from './NewService';
 import {Link} from 'react-router-dom';
+import SearchIcon from '@material-ui/icons/Search';
 const ManageService = () => {
 
     const [toggleState,setToggleState] = useState(1);
@@ -46,12 +47,14 @@ const ManageService = () => {
                     <Button className="remind-all">Remind All</Button>
                 </div>
             </div> 
-
-        <div>
-            <Link to="/addexpense" className="remind-all">
-                <FaIcons.FaPlus/> Add Expense
-            </Link>
-        </div>
+            <div className="search-input">
+                <InputBase placeholder="Search" startAdornment={<SearchIcon/>}/>
+            </div>
+            <div>
+                <Link to="/addexpense" className="remind-all">
+                    <FaIcons.FaPlus/> Add Expense
+                </Link>
+            </div>
         <div className="container">
             <div className="bloc-tabs">
                 <div className= { toggleState === 1 ? "tabs active-tabs" : "tabs"} onClick={() => toggleTab(1)}>Clients</div>

@@ -147,6 +147,20 @@
     display: block;
   }
 
+  /* Search Bar */
+.search-input{
+  opacity: 0.6;
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+}
+.search-input:hover{
+  background-color:#f2f2f2 ;
+}
+.search-input .MuiSvgIcon-root{
+  margin-right: 0.5rem;
+}
+
+
 /* Buttons */
 .remind-all{
     background-color: #ffffff !important;
