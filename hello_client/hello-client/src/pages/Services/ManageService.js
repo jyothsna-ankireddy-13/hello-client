@@ -1,13 +1,27 @@
 import React,{useState} from 'react';
-import * as FaIcons from 'react-icons/fa';
-import {Card, CardContent,Typography, CardActions, Button,InputBase} from '@material-ui/core';
+import {Card, CardContent,Typography, CardActions, Button,InputBase,makeStyles} from '@material-ui/core';
 import './Card.css';
-import CustomizedDialogs from './Servicepopup';
-import NewService from './NewService';
-import {Link} from 'react-router-dom';
 import SearchIcon from '@material-ui/icons/Search';
+import AddClientToServiceForm from './AddClientToServiceForm';
+import  Controls  from '../../components/controls/Controls';
+import AddIcon from '@material-ui/icons/Add';
+import Popup from '../../components/controls/Popup';
+import Expenses from '../Clients/Expenses';
+
+const useStyles = makeStyles(theme =>({
+    pageContent:{
+            padding:theme.spacing(5),
+            margin:theme.spacing(3)
+        
+    },
+    newButton:{
+        position:'absolute'
+    }
+}))
 const ManageService = () => {
 
+    const classes=useStyles();
+    const [openPopup,setOpenPopup] = useState(false);
     const [toggleState,setToggleState] = useState(1);
     const toggleTab = (index) =>{
         setToggleState(index);
@@ -51,9 +65,10 @@ const ManageService = () => {
                 <InputBase placeholder="Search" startAdornment={<SearchIcon/>}/>
             </div>
             <div>
-                <Link to="/addexpense" className="remind-all">
+                {/*<Link to="/addexpense" className="remind-all">
                     <FaIcons.FaPlus/> Add Expense
-                </Link>
+                </Link> */}
+                <Expenses/>
             </div>
         <div className="container">
             <div className="bloc-tabs">
@@ -71,9 +86,22 @@ const ManageService = () => {
                                     </Typography>
                                 </CardContent>
                                 <CardActions className="cardActions">
-                                    <CustomizedDialogs title="Create New Service">
-                                        <NewService/>
-                                    </CustomizedDialogs>    
+                                        
+                                        <Controls.ActionButton
+                                            /*text="Add"
+                                            
+                                              variant="outlined" */
+                                            startIcon={<AddIcon/>} 
+                                            color='none' 
+                                            className={classes.newButton}
+                                            onClick={()=> setOpenPopup(true)}
+                                        ></Controls.ActionButton>
+                                        <Popup
+                                        title="Add Client to Service Category"
+                                        openPopup={openPopup}
+                                        setOpenPopup={setOpenPopup}
+                                        ><AddClientToServiceForm/>
+                                        </Popup> 
                                 </CardActions>
                                 
                             </Card>

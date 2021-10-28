@@ -1,11 +1,31 @@
 import React,{useState} from 'react';
 import * as FaIcons from 'react-icons/fa';
-import {Card, CardContent,Typography, CardActions, Button,InputBase} from '@material-ui/core';
+import {Card, CardContent,Typography, CardActions, Button,InputBase, Paper,makeStyles} from '@material-ui/core';
 import './ClientCard.css';
 import {Link} from 'react-router-dom';
 import SearchIcon from '@material-ui/icons/Search';
+import AddServicetoClientForm from './AddServicetoClientForm';
+import  Controls  from '../../components/controls/Controls';
+import AddIcon from '@material-ui/icons/Add';
+import Popup from '../../components/controls/Popup';
+import Expenses from './Expenses';
+
+
+const useStyles = makeStyles(theme =>({
+    pageContent:{
+            padding:theme.spacing(5),
+            margin:theme.spacing(3)
+        
+    },
+    newButton:{
+        position:'absolute'
+    }
+}))
+
 const ManageService = () => {
 
+    const classes=useStyles();
+    const [openPopup,setOpenPopup] = useState(false);
     const [toggleState,setToggleState] = useState(1);
     const toggleTab = (index) =>{
         setToggleState(index);
@@ -46,9 +66,8 @@ const ManageService = () => {
                 <InputBase placeholder="Search" startAdornment={<SearchIcon/>}/>
             </div>
             <div>
-                <Link to="/addexpense" className="remind-all">
-                    <FaIcons.FaPlus/> Add Payment
-                </Link>
+               <Expenses/>
+                
             </div>
         <div className="container">
             <div className="bloc-tabs">
@@ -62,14 +81,29 @@ const ManageService = () => {
                             <Card className="card-container" >
                                 <CardContent className="card-content">
                                     <Typography gutterBottom  variant="h5">
-                                        Add Service
+                                        Add Service to this client
                                     </Typography>
-                                </CardContent>{/*
+                                </CardContent>
                                 <CardActions className="cardActions">
-                                    <CustomizedDialogs title="Add Service">
+                                    {/*<CustomizedDialogs title="Add Service">
                                         <NewService/>
-                                    </CustomizedDialogs>    
-                                </CardActions>*/}
+                                    </CustomizedDialogs> */} 
+                                        
+                                        <Controls.ActionButton
+                                            /*text="Add"
+                                            variant="outlined" */
+                                            color='none'
+                                            startIcon={<AddIcon/>}
+                                            className={classes.newButton}
+                                            onClick={()=> setOpenPopup(true)}>
+                                        </Controls.ActionButton>
+                                        <Popup
+                                        title="Add Service for Client Name"
+                                        openPopup={openPopup}
+                                        setOpenPopup={setOpenPopup}
+                                    ><AddServicetoClientForm/>
+                                    </Popup>
+                                </CardActions>
                                 
                             </Card>
                             <Card className="card-container" id="service-card2">

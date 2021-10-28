@@ -6,20 +6,21 @@ import Controls  from '../../components/controls/Controls';
 
 const initialFValues = {
     id:0,
-    serviceName:'',
-    serviceDescription:'',
-    taxRate:''
+    expenseName:'',
+    amount:'',
+    clientRelatedTo:'',
+    serviceRelatedTo:''
 }
-const NewService = () => {
+const AddExpenseForm = () => {
 
     const validate=(fieldValues = values)=>{
         let temp={...errors}
-        if('serviceName' in fieldValues)
-            temp.serviceName=fieldValues.serviceName?" ": "This field is required."
-        if('serviceDescription' in fieldValues)
-            temp.serviceDescription=fieldValues.serviceDescription?" ": "This field is required."
-        if('taxRate' in fieldValues)
-            temp.taxRate= fieldValues.taxRate?" ": "This field is required."
+        if('expenseName' in fieldValues)
+            temp.expenseName=fieldValues.expenseName?" ": "This field is required."
+        if('amount' in fieldValues)
+            temp.amount=fieldValues.amount?" ": "This field is required."
+        if('serviceRelatedTo' in fieldValues)
+            temp.serviceRelatedTo= fieldValues.serviceRelatedTo?" ": "This field is required."
 
         setErrors({
             ...temp
@@ -45,25 +46,31 @@ const NewService = () => {
                 <Grid>
                     <Grid item>
                         <Controls.Input 
-                            name="serviceName"
-                            label="Service Name"
-                            value={values.serviceName}
+                            name="expenseName"
+                            label="Expense Name"
+                            value={values.expenseName}
                             onChange={handleInputChange}
-                            error={errors.serviceName}
+                            error={errors.expenseName}
                         />
                         <Controls.Input
-                            label="Service Description"
-                            name="serviceDescription"
-                            value={values.serviceDescription}
+                            label="Amount"
+                            name="amount"
+                            value={values.amount}
                             onChange={handleInputChange}
-                            error={errors.serviceDescription}
+                            error={errors.amount}
                         />
                         <Controls.Input
-                            label="Tax Rate(%)"
-                            name="taxRate"
-                            value={values.taxRate}
+                            label="Client Related to(optional)"
+                            name="clientRelatedTo"
+                            value={values.clientRelatedTo}
                             onChange={handleInputChange}
-                            error={errors.taxRate}
+                        />
+                        <Controls.Input
+                            label="Service Related To"
+                            name="serviceRelatedTo"
+                            value={values.serviceRelatedTo}
+                            onChange={handleInputChange}
+                            error={errors.serviceRelatedTo}
                         />
                         
                         <div>
@@ -84,4 +91,4 @@ const NewService = () => {
     )
 }
 
-export default NewService;
+export default AddExpenseForm;

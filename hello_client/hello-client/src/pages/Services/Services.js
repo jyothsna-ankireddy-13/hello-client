@@ -1,11 +1,30 @@
-import React from 'react'
-import {Card, CardContent,Typography, CardActions, Button, InputBase} from '@material-ui/core';
+import React,{useState} from 'react'
+import {Card, CardContent,Typography, CardActions, Button, InputBase,makeStyles} from '@material-ui/core';
 import './Card.css';
+import * as FaIcons from 'react-icons/fa';
 import CustomizedDialogs from './Servicepopup';
 import NewService from './NewService';
 import {Link} from 'react-router-dom';
 import SearchIcon from '@material-ui/icons/Search';
+import  Controls  from '../../components/controls/Controls';
+import AddIcon from '@material-ui/icons/Add';
+import Popup from '../../components/controls/Popup';
+
+const useStyles = makeStyles(theme =>({
+    pageContent:{
+            padding:theme.spacing(5),
+            margin:theme.spacing(3)
+        
+    },
+    newButton:{
+        position:'absolute'
+    }
+}))
 const Services = () => {
+
+    const classes=useStyles();
+    const [openPopup,setOpenPopup] = useState(false);
+
     return (
         <div className="manage-service"> 
           <div className="servicename-heading">
@@ -47,9 +66,25 @@ const Services = () => {
                             </Typography>
                         </CardContent>
                         <CardActions className="cardActions">
-                            <CustomizedDialogs title="Create New Service">
+                           { /* <CustomizedDialogs title="Create New Service">
                                 <NewService/>
-                            </CustomizedDialogs>    
+                            </CustomizedDialogs> */}
+                            <Controls.ActionButton
+                                /*text="Add"
+                                variant="outlined" */
+                                color='none'
+                                startIcon={<AddIcon/>}
+                                className={classes.newButton}
+                                onClick={()=> setOpenPopup(true)}>
+                                
+                                </Controls.ActionButton>
+                                <Popup
+                                title="Add Service for Client Name"
+                                openPopup={openPopup}
+                                setOpenPopup={setOpenPopup}
+                                >
+                                    <NewService/>
+                                </Popup>    
                         </CardActions>
                         
                     </Card>

@@ -1,10 +1,29 @@
-import React from 'react';
-import {Card, CardContent,Typography, CardActions, Button,InputBase} from '@material-ui/core';
+import React,{useState} from 'react';
+import {Card, CardContent,Typography, CardActions, Button,InputBase,makeStyles} from '@material-ui/core';
 import './ClientCard.css';
 import {Link} from 'react-router-dom';
 import * as FaIcons from 'react-icons/fa';
 import SearchIcon from '@material-ui/icons/Search';
+import AddClientForm from './AddClientForm';
+import  Controls  from '../../components/controls/Controls';
+import AddIcon from '@material-ui/icons/Add';
+import Popup from '../../components/controls/Popup';
+
+const useStyles = makeStyles(theme =>({
+    pageContent:{
+            padding:theme.spacing(5),
+            margin:theme.spacing(3)
+        
+    },
+    newButton:{
+        position:'absolute'
+    }
+}))
 const Clients = () => {
+
+    const classes=useStyles();
+    const [openPopup,setOpenPopup] = useState(false);
+
     return (
         <div className="clients">
             <div>
@@ -31,16 +50,27 @@ const Clients = () => {
                 <Card className="card-container" >
                     <CardContent className="card-content">
                         <Typography gutterBottom  variant="h5">
-                            Add Client
-                        </Typography>
-                        <Typography gutterBottom  variant="h5">
-                            <FaIcons.FaPlus/>
+                            Add a New Client
                         </Typography>
                     </CardContent>
                     <CardActions className="cardActions">
                         {/* <CustomizedDialogs title="Create New Service">
                             <NewService/>
-                        </CustomizedDialogs> */}   
+                        </CustomizedDialogs> */}
+                        
+                                        
+                            <Controls.ActionButton
+                            startIcon={<AddIcon/>}
+                            className={classes.newButton}
+                            onClick={()=> setOpenPopup(true)}>
+                            </Controls.ActionButton>
+                            <Popup
+                            title="Add Client"
+                            openPopup={openPopup}
+                            setOpenPopup={setOpenPopup}
+                            ><AddClientForm/>
+                            </Popup>
+                          
                     </CardActions>
                     
                 </Card>
