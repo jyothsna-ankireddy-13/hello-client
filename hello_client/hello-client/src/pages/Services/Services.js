@@ -1,8 +1,6 @@
 import React,{useState} from 'react'
 import {Card, CardContent,Typography, CardActions, Button, InputBase,makeStyles} from '@material-ui/core';
 import './Card.css';
-import * as FaIcons from 'react-icons/fa';
-import CustomizedDialogs from './Servicepopup';
 import NewService from './NewService';
 import {Link} from 'react-router-dom';
 import SearchIcon from '@material-ui/icons/Search';

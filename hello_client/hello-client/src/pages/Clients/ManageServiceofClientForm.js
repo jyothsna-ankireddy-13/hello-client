@@ -4,27 +4,25 @@ import {useForm,Form} from '../../components/useForm';
 import Controls  from '../../components/controls/Controls';
 
 const payCycleItems = [
-    {id:'cash',title:'Cash'},
-    {id:'blood',title:'Blood'},
-    {id:'bankTransfer',title:'Bank Transfer'}
+    {id:'monthly',title:'Monthly'},
+    {id:'quaterly',title:'Quaterly'},
+    {id:'semi-anual',title:'Semi-Anual'},
+    {id:'anual',title:'Anual'}
 ]
 const initialFValues = {
     id:0,
-    service:'',
-    amountPaid:'',
-    amountPending:'',
-    payCycle:'blood',
+    amountCharged:'',
+    revenueEarned:'',
+    payCycle:'quaterly'
 }
-const AddPaymentForm = () => {
+const ManageServiceofClientForm = () => {
 
     const validate=(fieldValues = values)=>{
         let temp={...errors}
-        if('service' in fieldValues)
-            temp.service=fieldValues.service?" ": "This field is required."
-        if('amount' in fieldValues)
-            temp.amountPaid=fieldValues.amountPaid?" ": "This field is required."
-        if('amountPending' in fieldValues)
-            temp.amountPending= fieldValues.amountPending?" ": "This field is required."
+        if('revenueEarned' in fieldValues)
+            temp.revenueEarned=fieldValues.revenueEarned?" ": "This field is required."
+        if('amountCharged' in fieldValues)
+        temp.amountCharged=fieldValues.amountCharged?" ": "This field is required."
 
         setErrors({
             ...temp
@@ -49,6 +47,16 @@ const AddPaymentForm = () => {
             <Form onSubmit={handleSubmit}>
                 <Grid>
                     <Grid item>
+
+                        <div>
+                            <Controls.Button
+                                text="Once"
+                            />
+                            <Controls.Button
+                                text="Repeat"
+                            />
+                        </div>
+                        
                         <Controls.RadioGroup
                             name="payCycle"
                             label="PayCycle"
@@ -57,30 +65,23 @@ const AddPaymentForm = () => {
                             items={payCycleItems}
                         />
                         <Controls.Input 
-                            name="service"
-                            label="Service"
-                            value={values.service}
+                            name="amountCharged"
+                            label="Amount Charged"
+                            value={values.amountCharged}
                             onChange={handleInputChange}
-                            error={errors.service}
+                            error={errors.amountCharged}
                         />
-                        <Controls.Input
-                            label="Amount Paid"
-                            name="amountPaid"
-                            value={values.amountPaid}
+                        <Controls.Input 
+                            name="revenueEarned"
+                            label="Revenue Earned"
+                            value={values.revenueEarned}
                             onChange={handleInputChange}
-                            error={errors.amountPaid}
-                        />
-                        <Controls.Input
-                            label="Amount Pending"
-                            name="amountPending"
-                            value={values.amountPending}
-                            onChange={handleInputChange}
-                            error={errors.amountPending}
+                            error={errors.revenueEarned}
                         />
                         <div>
                             <Controls.Button
                                 type="submit"
-                                text="Create"
+                                text="Update"
                             />
                             <Controls.Button
                                 color="default"
@@ -95,4 +96,4 @@ const AddPaymentForm = () => {
     )
 }
 
-export default AddPaymentForm;
+export default ManageServiceofClientForm;

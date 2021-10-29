@@ -6,7 +6,7 @@ import Services from './pages/Services/Services';
 import Clients from './pages/Clients/Clients';
 import MoneyChart from './pages/MoneyChart';
 import Notifications from './pages/Notifications';
-import Payments from './pages/Payments';
+import Payments from './pages/Payments/Payments';
 import ManageService from './pages/Services/ManageService';
 import AddExpense from './pages/Services/AddExpense';
 import ManageClients from './pages/Clients/ManageClients';

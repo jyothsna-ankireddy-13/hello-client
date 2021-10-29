@@ -9,6 +9,7 @@ import  Controls  from '../../components/controls/Controls';
 import AddIcon from '@material-ui/icons/Add';
 import Popup from '../../components/controls/Popup';
 import Expenses from './Expenses';
+import ManageServiceofClient from './ManageServiceofClient';
 
 
 const useStyles = makeStyles(theme =>({
@@ -123,7 +124,8 @@ const ManageService = () => {
                                 <div >
                                     <CardActions className="cardActions"> 
                                         <Button className="remind-btn">Remind</Button>
-                                        <Button className="remind-all">Manage</Button>    
+                                        {/*<Button className="remind-all">Manage</Button>   */}
+                                        <ManageServiceofClient/> 
                                     </CardActions>
                                 </div>
                     
