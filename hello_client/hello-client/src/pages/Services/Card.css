@@ -49,7 +49,14 @@
 }
  .MuiButton-root:hover {
     text-decoration: none;
-    background-color: transparent!important; 
+   
+}
+.cards .cardActions .MuiButton-root:hover{
+  background-color: #fff;
+}
+
+.MuiDialogTitle-root .MuiButton-root:hover{
+  background-color: #fff;
 }
 
 .cardActions{
@@ -67,7 +74,10 @@
 .search-input{
   opacity: 0.6;
   padding: 0.5rem 1rem;
-  font-size: 0.8rem;
+   width: 60%;
+    font-size: 0.8rem;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 .search-input:hover{
   background-color:#f2f2f2 ;
@@ -151,8 +161,8 @@
     margin-bottom: 5px;
   }
   .content p {
-    width: 80%;
-    height: 80%;
+    width: 100%;
+    height: auto;
   }
   .active-content {
     display: block;

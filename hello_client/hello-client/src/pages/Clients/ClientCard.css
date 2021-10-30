@@ -51,7 +51,7 @@
 }
  .MuiButton-root:hover {
     text-decoration: none;
-    background-color: transparent!important; 
+    
 }
 
 .cardActions{
@@ -141,7 +141,7 @@
   }
   .content p {
     width: 100%;
-    height: 100%;
+    height: auto;
   }
   .active-content {
     display: block;
@@ -152,6 +152,9 @@
   opacity: 0.6;
   padding: 0.5rem 1rem;
   font-size: 0.8rem;
+  border: 1px solid #383733;
+  box-sizing: border-box;
+   border-radius: 6px;
 }
 .search-input:hover{
   background-color:#f2f2f2 ;

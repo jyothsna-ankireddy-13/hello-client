@@ -21,7 +21,7 @@ const AddPaymentForm = () => {
         let temp={...errors}
         if('service' in fieldValues)
             temp.service=fieldValues.service?" ": "This field is required."
-        if('amount' in fieldValues)
+        if('amountPaid' in fieldValues)
             temp.amountPaid=fieldValues.amountPaid?" ": "This field is required."
         if('amountPending' in fieldValues)
             temp.amountPending= fieldValues.amountPending?" ": "This field is required."

@@ -98,7 +98,7 @@ const Services = () => {
                                 <Typography>Revenue</Typography>
                             </CardContent>
                             <CardContent className="card-content">
-                            <Typography>Renewals in next 30d:X</Typography>
+                             <Typography>Renewals in next 30d:X</Typography>
                             <Typography>Overdue Amount:XXXX</Typography>
                             <Typography>Cost:XXXX</Typography>
                         </CardContent>

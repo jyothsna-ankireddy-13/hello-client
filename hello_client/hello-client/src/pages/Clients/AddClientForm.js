@@ -1,5 +1,5 @@
 import { Grid } from '@material-ui/core';
-import React from 'react'
+import React from 'react';
 import {useForm,Form} from '../../components/useForm';
 import Controls  from '../../components/controls/Controls';
 

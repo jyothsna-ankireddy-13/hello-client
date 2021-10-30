@@ -13,13 +13,16 @@ const useStyles = makeStyles(theme =>({
     },
     newButton:{
         position:'absolute'
+    },
+    payText:{
+        color: '#80C667'
     }
 }))
 export default function Payment() {
     const classes=useStyles();
     const [openPopup,setOpenPopup] = useState(false);
     return (
-        <div>
+        <div className={classes.payText}>
             <Controls.ActionButton
                                 /*text="Add"
                                 variant="outlined" */
